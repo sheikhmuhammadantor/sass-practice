@@ -1,0 +1,31 @@
+.button-basic {
+  border: none;
+  padding: 15px 30px;
+  text-align: center;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  text-align: center;
+  display: inline-block;
+  text-decoration: none;
+  font-weight: 700;
+  margin: 10px 0;
+  border: 2px solid #ffffff;
+}
+
+.button-basic:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px #ffffff;
+}
+
+.button-report {
+  @extend .button-basic;
+  background-color: red;
+}
+
+.button-submit {
+  @extend .button-basic;
+  background-color: green;
+  color: white;
+}

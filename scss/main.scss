@@ -1,0 +1,82 @@
+@forward "./base/index";
+@use "./util/index" as var;
+@use "./util/conditions" as cond;
+
+h1.author-name {
+  color: var.$basicRed;
+  font-size: 2rem;
+  font-weight: 700;
+  text-align: center;
+  margin: 1rem 0;
+}
+
+div .my-skill {
+  h3 {
+    color: var.$basicBlue;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 1rem 0;
+    text-align: center;
+  }
+  ul {
+    @include var.flex(center);
+    gap: 1rem;
+    li {
+      background-color: var.$basicGray;
+      padding: 0.5rem 1rem;
+      border-radius: 0.5rem;
+      font-size: 1rem;
+      font-weight: 700;
+      color: var.$basicBlack;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    li:hover {
+      background-color: var.$basicGreen;
+      color: var.$basicWhite;
+    }
+  }
+}
+
+.extends {
+  h2 {
+    color: var.$basicGreen;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 1rem 0;
+    text-align: center;
+  }
+  .extends-button {
+    @include var.flex();
+    gap: 1rem;
+  }
+}
+
+.about {
+  margin: 4rem 0 2rem;
+  h3 {
+    color: var.$basicGray;
+    @include cond.setFontSize(2rem);
+    @include cond.setFontWidth(bold);
+    text-align: center;
+  }
+  p {
+    @include cond.setFontSize(small);
+    margin: 1rem auto;
+    text-align: center;
+    width: 80%;
+  }
+}
+
+// @each;
+.button-color {
+  @include var.flex();
+  gap: 1rem;
+}
+
+@each $key, $color in var.$colors {
+  .color-#{$key} {
+    background-color: $color;
+    color: var.$basicWhite;
+  }
+}

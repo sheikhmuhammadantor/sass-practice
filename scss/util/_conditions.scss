@@ -1,0 +1,23 @@
+@mixin setFontSize($size) {
+  @if $size == "small" {
+    font-size: 12px;
+  } @else if $size == "medium" {
+    font-size: 16px;
+  } @else if $size == "large" {
+    font-size: 20px;
+  } @else {
+    font-size: $size;
+  }
+}
+
+@mixin setFontWidth($weight) {
+  @if $weight == "light" {
+    font-weight: 300;
+  } @else if $weight == "regular" {
+    font-weight: 400;
+  } @else if $weight == "bold" {
+    font-weight: 700;
+  } @else {
+    font-weight: $weight;
+  }
+}
